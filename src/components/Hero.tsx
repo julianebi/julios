@@ -8,7 +8,7 @@ export const Hero = () => {
   };
 
   const downloadResume = () => {
-    window.open("https://i.postimg.cc/RFC7TyFk/Ebi-Data-Analyst-Resume-2.png", "_blank");
+    window.open("https://postimg.cc/rdbRVh5j", "_blank");
   };
 
   return (
@@ -25,24 +25,13 @@ export const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-10 animate-fade-in">
-          {/* Resume Download Section */}
-          <div className="flex justify-center mb-8">
-            <button
-              onClick={downloadResume}
-              className="group bg-gradient-to-r from-green-400/20 to-green-600/20 backdrop-blur-sm border border-green-400/30 text-green-400 px-6 py-3 rounded-2xl font-semibold hover:bg-green-400 hover:text-gray-900 transition-all duration-300 hover:scale-105 flex items-center gap-3 shadow-lg shadow-green-400/20"
-            >
-              <Download className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-              Download Resume
-            </button>
-          </div>
-
           {/* Enhanced Profile Image */}
           <div className="flex justify-center">
             <div className="relative group">
               <div className="w-52 h-52 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-full p-1.5 shadow-2xl shadow-green-400/30">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <img 
-                    src="https://i.postimg.cc/CxYWbCDW/edited.jpg" 
+                    src="https://postimg.cc/svNkJqCs" 
                     alt="Julian Ebinesar"
                     className="w-full h-full object-cover"
                   />
@@ -100,6 +89,15 @@ export const Hero = () => {
               Learn More
               <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
+
+            <button
+              onClick={downloadResume}
+              className="group relative bg-gradient-to-r from-gray-800/60 to-gray-900/60 backdrop-blur-sm border-2 border-green-400/30 text-green-400 px-10 py-4 rounded-2xl font-bold hover:bg-green-400 hover:text-gray-900 hover:border-green-400 transition-all duration-300 hover:scale-110 flex items-center gap-3 shadow-lg shadow-green-400/20"
+            >
+              <Download className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+              Download Resume
+              <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
           </div>
 
           {/* Enhanced Stats */}
