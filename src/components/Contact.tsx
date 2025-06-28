@@ -72,12 +72,12 @@ export const Contact = () => {
                 <div>
                   <h4 className="text-white font-semibold">LinkedIn</h4>
                   <a 
-                    href="https://linkedin.com/in/julian-ebinesar"
+                    href="https://www.linkedin.com/in/julian-ebinesar-7239282a7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-400 hover:text-green-300 transition-colors"
                   >
-                    linkedin.com/in/julian-ebinesar
+                    linkedin.com/in/julian-ebinesar-7239282a7
                   </a>
                 </div>
               </div>

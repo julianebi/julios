@@ -1,4 +1,6 @@
 
+import { ExternalLink, Github } from "lucide-react";
+
 export const Projects = () => {
   const projects = [
     {
@@ -10,7 +12,8 @@ export const Projects = () => {
         "Covered 15+ countries globally",
         "Created interactive geospatial visualizations",
         "Identified key business optimization opportunities"
-      ]
+      ],
+      githubLink: null
     },
     {
       title: "Crowdfunding Performance Analytics",
@@ -21,7 +24,8 @@ export const Projects = () => {
         "Normalized complex crowdfunding datasets",
         "Created performance tracking dashboards",
         "Influenced strategic campaign decisions"
-      ]
+      ],
+      githubLink: "https://github.com/julianebi/Crowdfunding-Data-analysis?tab=readme-ov-file#crowdfunding-data-analysis"
     },
     {
       title: "Encryptix Virtual Internship",
@@ -32,7 +36,8 @@ export const Projects = () => {
         "Implemented classification algorithms",
         "Optimized model performance",
         "Deployed scalable analytics solutions"
-      ]
+      ],
+      githubLink: "https://github.com/julianebi/ENCRYPTIX-"
     }
   ];
 
@@ -52,7 +57,19 @@ export const Projects = () => {
               key={index}
               className="bg-gray-800/50 rounded-lg p-8 border border-green-400/20 hover:border-green-400/50 transition-all duration-300 hover:scale-105"
             >
-              <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-400 hover:text-green-300 transition-colors"
+                  >
+                    <Github className="w-6 h-6" />
+                  </a>
+                )}
+              </div>
               
               <p className="text-gray-300 mb-6 leading-relaxed">
                 {project.description}
@@ -70,7 +87,7 @@ export const Projects = () => {
                 </ul>
               </div>
 
-              <div>
+              <div className="mb-6">
                 <h4 className="text-lg font-semibold text-green-400 mb-3">Technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
@@ -83,6 +100,18 @@ export const Projects = () => {
                   ))}
                 </div>
               </div>
+
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors font-medium"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  View Project
+                </a>
+              )}
             </div>
           ))}
         </div>

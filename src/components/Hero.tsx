@@ -7,6 +7,10 @@ export const Hero = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const downloadResume = () => {
+    window.open("https://i.postimg.cc/RFC7TyFk/Ebi-Data-Analyst-Resume-2.png", "_blank");
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Enhanced Background gradient */}
@@ -21,12 +25,27 @@ export const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-10 animate-fade-in">
+          {/* Resume Download Section */}
+          <div className="flex justify-center mb-8">
+            <button
+              onClick={downloadResume}
+              className="group bg-gradient-to-r from-green-400/20 to-green-600/20 backdrop-blur-sm border border-green-400/30 text-green-400 px-6 py-3 rounded-2xl font-semibold hover:bg-green-400 hover:text-gray-900 transition-all duration-300 hover:scale-105 flex items-center gap-3 shadow-lg shadow-green-400/20"
+            >
+              <Download className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+              Download Resume
+            </button>
+          </div>
+
           {/* Enhanced Profile Image */}
           <div className="flex justify-center">
             <div className="relative group">
               <div className="w-52 h-52 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-full p-1.5 shadow-2xl shadow-green-400/30">
-                <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center text-7xl font-bold text-green-400 shadow-inner">
-                  JE
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <img 
+                    src="https://i.postimg.cc/CxYWbCDW/edited.jpg" 
+                    alt="Julian Ebinesar"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
