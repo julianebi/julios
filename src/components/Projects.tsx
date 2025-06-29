@@ -13,7 +13,7 @@ export const Projects = () => {
         "Created interactive geospatial visualizations",
         "Identified key business optimization opportunities"
       ],
-      githubLink: null
+      githubLink: "https://github.com/julianebi/Zomato-Analysis-Power-Bi-Excel-Tableau-SQL"
     },
     {
       title: "Crowdfunding Performance Analytics",

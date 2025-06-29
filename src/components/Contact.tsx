@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { Mail, Github, Linkedin, MapPin } from "lucide-react";
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,14 +10,43 @@ export const Contact = () => {
     email: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-    alert("Thank you for your message! I'll get back to you soon.");
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.send(
+        'service_2ji1pdl',
+        'template_zun09u9',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'julianebinesar270@gmail.com',
+        },
+        '8c3HybZP1WmHKWhVd'
+      );
+
+      if (result.text === 'OK') {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      }
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -127,7 +158,8 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:border-green-400 focus:outline-none transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:border-green-400 focus:outline-none transition-colors disabled:opacity-50"
                   placeholder="Enter your name"
                 />
               </div>
@@ -143,7 +175,8 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:border-green-400 focus:outline-none transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:border-green-400 focus:outline-none transition-colors disabled:opacity-50"
                   placeholder="Enter your email"
                 />
               </div>
@@ -158,17 +191,19 @@ export const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:border-green-400 focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white focus:border-green-400 focus:outline-none transition-colors resize-none disabled:opacity-50"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-green-400 text-gray-900 py-3 rounded-lg font-semibold hover:bg-green-300 transition-all duration-200 hover:scale-105"
+                disabled={isSubmitting}
+                className="w-full bg-green-400 text-gray-900 py-3 rounded-lg font-semibold hover:bg-green-300 transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
