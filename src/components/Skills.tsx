@@ -1,4 +1,3 @@
-
 export const Skills = () => {
   const skillCategories = [
     {
@@ -14,6 +13,7 @@ export const Skills = () => {
         { name: "SQL", level: 90 },
         { name: "Advanced Excel", level: 95 },
         { name: "Python", level: 80 },
+        { name: "R", level: 75 },
         { name: "Data Modeling", level: 85 },
       ]
     },
@@ -93,7 +93,7 @@ export const Skills = () => {
         <div className="mt-20">
           <h3 className="text-3xl font-bold text-white text-center mb-12">Tools & Technologies</h3>
           <div className="flex flex-wrap justify-center items-center gap-6">
-            {["Power BI", "Tableau", "SQL", "Python", "Excel", "SAP", "SAS", "Statistical Analysis"].map((tool, index) => (
+            {["Power BI", "Tableau", "SQL", "Python", "R", "Excel", "SAP", "SAS", "Statistical Analysis"].map((tool, index) => (
               <div 
                 key={index}
                 className="group relative"
