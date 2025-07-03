@@ -4,6 +4,19 @@ import { ExternalLink, Github } from "lucide-react";
 export const Projects = () => {
   const projects = [
     {
+      title: "Power BI Sales Analysis - Amazon Products",
+      description: "Comprehensive Amazon sales performance analysis using Power BI, focusing on sales trends, product categories, and customer reviews. Features interactive dashboards with KPIs and dynamic filters for data exploration.",
+      technologies: ["Power BI", "DAX", "Power Query", "Excel/CSV", "Data Visualization"],
+      highlights: [
+        "Sales analysis by Month and Year with YoY comparison",
+        "Product category-wise sales breakdown and insights",
+        "Top 5 products ranked by YTD Reviews and Sales",
+        "Interactive filters for Product Category and Year",
+        "Key KPIs: QTD Sales, YTD Sales, YTD Reviews"
+      ],
+      githubLink: "https://github.com/julianebi/Power-Bi_Sales-Analysis_Amazon-Prducts"
+    },
+    {
       title: "Zomato Analysis Dashboard",
       description: "Comprehensive analysis of 9,551 restaurants across 15+ countries using Power BI, DAX, and SQL. Created geospatial insights and identified critical business gaps.",
       technologies: ["Power BI", "DAX", "SQL", "Geospatial Analysis"],
