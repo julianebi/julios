@@ -1,38 +1,41 @@
+
+import { Database, BarChart3, Code2, Brain, FileSpreadsheet, TrendingUp, Settings, Calculator } from 'lucide-react';
+
 export const Skills = () => {
   const skillCategories = [
     {
       title: "BI Tools",
       skills: [
-        { name: "Power BI", level: 90 },
-        { name: "Tableau", level: 85 },
+        { name: "Power BI", level: 90, icon: BarChart3 },
+        { name: "Tableau", level: 85, icon: TrendingUp },
       ]
     },
     {
       title: "Technical Skills",
       skills: [
-        { name: "SQL", level: 90 },
-        { name: "Advanced Excel", level: 95 },
-        { name: "Python", level: 80 },
-        { name: "R", level: 75 },
-        { name: "Data Modeling", level: 85 },
+        { name: "SQL", level: 90, icon: Database },
+        { name: "Advanced Excel", level: 95, icon: FileSpreadsheet },
+        { name: "Python", level: 80, icon: Code2 },
+        { name: "R", level: 75, icon: Calculator },
+        { name: "Data Modeling", level: 85, icon: Brain },
       ]
     },
     {
       title: "Analytics",
       skills: [
-        { name: "Data Visualization", level: 92 },
-        { name: "Dashboarding", level: 88 },
-        { name: "Data Cleaning", level: 85 },
-        { name: "KPI Analysis", level: 90 },
+        { name: "Data Visualization", level: 92, icon: BarChart3 },
+        { name: "Dashboarding", level: 88, icon: TrendingUp },
+        { name: "Data Cleaning", level: 85, icon: Settings },
+        { name: "KPI Analysis", level: 90, icon: BarChart3 },
       ]
     },
     {
       title: "Data Management & Statistical Analysis",
       skills: [
-        { name: "SAP", level: 75 },
-        { name: "SAS", level: 70 },
-        { name: "Statistical Modeling", level: 78 },
-        { name: "Data Warehousing", level: 82 },
+        { name: "SAP", level: 75, icon: Settings },
+        { name: "SAS", level: 70, icon: Calculator },
+        { name: "Statistical Modeling", level: 78, icon: Brain },
+        { name: "Data Warehousing", level: 82, icon: Database },
       ]
     }
   ];
@@ -64,25 +67,33 @@ export const Skills = () => {
                 </div>
                 
                 <div className="space-y-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white font-medium text-sm">{skill.name}</span>
-                        <span className="text-green-400 font-bold text-sm">{skill.level}%</span>
-                      </div>
-                      
-                      <div className="relative">
-                        <div className="w-full bg-gray-700/50 rounded-full h-2">
-                          <div 
-                            className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 h-2 rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
-                            style={{ width: `${skill.level}%` }}
-                          >
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                  {category.skills.map((skill, skillIndex) => {
+                    const IconComponent = skill.icon;
+                    return (
+                      <div key={skillIndex} className="space-y-3">
+                        <div className="flex justify-between items-center">
+                          <div className="flex items-center gap-3">
+                            <div className="w-6 h-6 bg-green-400/20 rounded-lg flex items-center justify-center">
+                              <IconComponent className="w-4 h-4 text-green-400" />
+                            </div>
+                            <span className="text-white font-medium text-sm">{skill.name}</span>
+                          </div>
+                          <span className="text-green-400 font-bold text-sm">{skill.level}%</span>
+                        </div>
+                        
+                        <div className="relative">
+                          <div className="w-full bg-gray-700/50 rounded-full h-2">
+                            <div 
+                              className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 h-2 rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
+                              style={{ width: `${skill.level}%` }}
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
