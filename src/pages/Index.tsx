@@ -10,7 +10,7 @@ import { Navigation } from "@/components/Navigation";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white" style={{ transformStyle: 'preserve-3d' }}>
       <Navigation />
       <Hero />
       <About />

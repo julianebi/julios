@@ -1,5 +1,7 @@
 
 import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { ParallaxBackground } from "./ParallaxBackground";
+import { Floating3DCards } from "./Floating3DCards";
 
 export const Hero = () => {
   const scrollToContact = () => {
@@ -12,24 +14,38 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Enhanced Background gradient */}
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ perspective: '1000px' }}>
+      {/* Enhanced Background gradient with 3D perspective */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-green-900/30"></div>
       
-      {/* Animated background elements */}
+      {/* 3D Parallax Background */}
+      <ParallaxBackground intensity={1.2} />
+      
+      {/* Floating 3D Cards */}
+      <Floating3DCards />
+      
+      {/* Animated background elements with 3D transforms */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-80 h-80 bg-green-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-green-400/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-green-400/5 to-transparent rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute top-20 left-20 w-80 h-80 bg-green-400/10 rounded-full blur-3xl animate-pulse" 
+             style={{ transform: 'rotateX(45deg) rotateY(45deg)', transformStyle: 'preserve-3d' }}></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-green-400/5 rounded-full blur-3xl animate-pulse delay-1000"
+             style={{ transform: 'rotateX(-30deg) rotateY(-30deg)', transformStyle: 'preserve-3d' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-green-400/5 to-transparent rounded-full blur-3xl animate-pulse delay-500"
+             style={{ transform: 'translate(-50%, -50%) rotateX(15deg) rotateZ(15deg)', transformStyle: 'preserve-3d' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-10 animate-fade-in">
-          {/* Enhanced Profile Image */}
+          {/* Enhanced Profile Image with 3D effect */}
           <div className="flex justify-center">
-            <div className="relative group">
-              <div className="w-52 h-52 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-full p-1.5 shadow-2xl shadow-green-400/30">
-                <div className="w-full h-full rounded-full overflow-hidden">
+            <div className="relative group" style={{ perspective: '1200px' }}>
+              <div className="w-52 h-52 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-full p-1.5 shadow-2xl shadow-green-400/30 hover:shadow-green-400/50 transition-all duration-500"
+                   style={{ 
+                     transform: 'rotateX(5deg) rotateY(-5deg)',
+                     transformStyle: 'preserve-3d'
+                   }}>
+                <div className="w-full h-full rounded-full overflow-hidden hover:scale-105 transition-transform duration-300"
+                     style={{ transformStyle: 'preserve-3d' }}>
                   <img 
                     src="https://postimg.cc/svNkJqCs" 
                     alt="Julian Ebinesar"
@@ -38,20 +54,30 @@ export const Hero = () => {
                 </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center shadow-lg animate-bounce"
+                   style={{ transform: 'translateZ(20px)', transformStyle: 'preserve-3d' }}>
                 <Sparkles className="w-4 h-4 text-gray-900" />
               </div>
             </div>
           </div>
 
-          {/* Enhanced Title */}
-          <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-black leading-tight">
+          {/* Enhanced Title with 3D text effect */}
+          <div className="space-y-4" style={{ perspective: '1000px' }}>
+            <h1 className="text-6xl md:text-8xl font-black leading-tight hover:scale-105 transition-transform duration-300"
+                style={{ 
+                  transform: 'rotateX(2deg)',
+                  transformStyle: 'preserve-3d',
+                  textShadow: '0 4px 8px rgba(0,0,0,0.3)'
+                }}>
               <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">Julian </span>
               <span className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent">Ebinesar</span>
             </h1>
             
-            <p className="text-2xl md:text-4xl font-light bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent">
+            <p className="text-2xl md:text-4xl font-light bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent hover:scale-102 transition-transform duration-300"
+               style={{ 
+                 transform: 'rotateX(1deg)',
+                 transformStyle: 'preserve-3d'
+               }}>
               Transforming Data Into Decisions
             </p>
           </div>
@@ -66,11 +92,15 @@ export const Hero = () => {
             </p>
           </div>
 
-          {/* Enhanced Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+          {/* Enhanced Action Buttons with 3D effects */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8" style={{ perspective: '800px' }}>
             <button
               onClick={scrollToContact}
-              className="group relative bg-gradient-to-r from-green-400 to-green-600 text-gray-900 px-10 py-4 rounded-2xl font-bold hover:from-green-300 hover:to-green-500 transition-all duration-300 flex items-center gap-3 hover:scale-110 shadow-2xl shadow-green-400/30"
+              className="group relative bg-gradient-to-r from-green-400 to-green-600 text-gray-900 px-10 py-4 rounded-2xl font-bold hover:from-green-300 hover:to-green-500 transition-all duration-300 flex items-center gap-3 hover:scale-110 shadow-2xl shadow-green-400/30 hover:shadow-green-400/50"
+              style={{
+                transform: 'rotateX(2deg) rotateY(-2deg)',
+                transformStyle: 'preserve-3d'
+              }}
             >
               Get In Touch 
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -84,6 +114,10 @@ export const Hero = () => {
                 document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
               }}
               className="group relative border-2 border-green-400 text-green-400 px-10 py-4 rounded-2xl font-bold hover:bg-green-400 hover:text-gray-900 transition-all duration-300 hover:scale-110 flex items-center gap-3 shadow-lg shadow-green-400/20"
+              style={{
+                transform: 'rotateX(2deg)',
+                transformStyle: 'preserve-3d'
+              }}
             >
               <Download className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
               Learn More
@@ -93,6 +127,10 @@ export const Hero = () => {
             <button
               onClick={downloadResume}
               className="group relative bg-gradient-to-r from-gray-800/60 to-gray-900/60 backdrop-blur-sm border-2 border-green-400/30 text-green-400 px-10 py-4 rounded-2xl font-bold hover:bg-green-400 hover:text-gray-900 hover:border-green-400 transition-all duration-300 hover:scale-110 flex items-center gap-3 shadow-lg shadow-green-400/20"
+              style={{
+                transform: 'rotateX(2deg) rotateY(2deg)',
+                transformStyle: 'preserve-3d'
+              }}
             >
               <Download className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
               Download Resume
@@ -100,15 +138,20 @@ export const Hero = () => {
             </button>
           </div>
 
-          {/* Enhanced Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto">
+          {/* Enhanced Stats with 3D cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto" style={{ perspective: '1000px' }}>
             {[
               { number: "40%+", label: "KPI Improvement" },
               { number: "30%", label: "Order Accuracy" },
               { number: "25%", label: "Stockout Reduction" },
               { number: "20+", label: "Vendor Relations" }
             ].map((stat, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-green-400/20 hover:border-green-400/50 transition-all duration-300 hover:scale-105">
+              <div key={index} 
+                   className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-green-400/20 hover:border-green-400/50 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                   style={{
+                     transform: `rotateX(${2 + index * 1}deg) rotateY(${-2 + index * 1}deg)`,
+                     transformStyle: 'preserve-3d'
+                   }}>
                 <div className="text-2xl md:text-3xl font-bold text-green-400 mb-2">{stat.number}</div>
                 <div className="text-gray-300 text-sm font-medium">{stat.label}</div>
               </div>
@@ -117,9 +160,13 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Enhanced Scroll indicator */}
+      {/* Enhanced Scroll indicator with 3D effect */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-14 border-2 border-green-400 rounded-full flex justify-center bg-gradient-to-b from-transparent to-green-400/10">
+        <div className="w-8 h-14 border-2 border-green-400 rounded-full flex justify-center bg-gradient-to-b from-transparent to-green-400/10"
+             style={{
+               transform: 'rotateX(10deg)',
+               transformStyle: 'preserve-3d'
+             }}>
           <div className="w-1.5 h-6 bg-gradient-to-b from-green-400 to-green-600 rounded-full mt-3 animate-pulse"></div>
         </div>
       </div>
