@@ -7,12 +7,10 @@ import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
-import { Global3DEffects } from "@/components/Global3DEffects";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white relative" style={{ transformStyle: 'preserve-3d' }}>
-      <Global3DEffects />
+    <div className="min-h-screen bg-gray-900 text-white" style={{ transformStyle: 'preserve-3d' }}>
       <Navigation />
       <Hero />
       <About />
