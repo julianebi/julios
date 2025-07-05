@@ -42,40 +42,23 @@ export const Hero = () => {
                  style={{ transformStyle: 'preserve-3d' }}>
               <img 
                 src="https://i.postimg.cc/cC7GNYdC/my.jpg" 
-                alt="Profile"
+                alt="Julian Ebinesar"
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 pulse-3d"></div>
+          <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center shadow-lg animate-bounce hover-lift transform-3d"
+               style={{ transform: 'translateZ(20px)', transformStyle: 'preserve-3d' }}>
+            <Sparkles className="w-4 h-4 text-gray-900" />
+          </div>
         </div>
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-32">
         <div className="space-y-10 animate-fade-in">
-          {/* Enhanced Profile Image with advanced 3D effect */}
-          <div className="flex justify-center">
-            <div className="relative group perspective-1500">
-              <div className="w-52 h-52 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-full p-1.5 shadow-2xl shadow-green-400/30 hover:shadow-green-400/60 transition-all duration-500 hover-lift transform-3d">
-                <div className="w-full h-full rounded-full overflow-hidden hover-lift transition-transform duration-300"
-                     style={{ transformStyle: 'preserve-3d' }}>
-                  <img 
-                    src="https://postimg.cc/svNkJqCs" 
-                    alt="Julian Ebinesar"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 pulse-3d"></div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center shadow-lg animate-bounce hover-lift transform-3d"
-                   style={{ transform: 'translateZ(20px)', transformStyle: 'preserve-3d' }}>
-                <Sparkles className="w-4 h-4 text-gray-900" />
-              </div>
-            </div>
-          </div>
-
           {/* Enhanced Title with advanced 3D text effect */}
-          <div className="space-y-4 perspective-1200">
+          <div className="space-y-4 perspective-1200 pt-16">
             <h1 className="text-6xl md:text-8xl font-black leading-tight hover-lift transform-3d"
                 style={{ 
                   transform: 'rotateX(2deg)',
