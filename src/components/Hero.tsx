@@ -34,31 +34,31 @@ export const Hero = () => {
              style={{ transform: 'translate(-50%, -50%) rotateX(15deg) rotateZ(15deg)', transformStyle: 'preserve-3d' }}></div>
       </div>
 
-      {/* User's Image positioned under the green circle */}
-      <div className="absolute top-32 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="relative group perspective-1500">
-          <div className="w-48 h-48 bg-gradient-to-br from-green-400/20 to-green-600/30 rounded-full p-1.5 shadow-2xl shadow-green-400/30 hover:shadow-green-400/60 transition-all duration-500 hover-lift transform-3d">
-            <div className="w-full h-full rounded-full overflow-hidden hover-lift transition-transform duration-300"
-                 style={{ transformStyle: 'preserve-3d' }}>
-              <img 
-                src="https://i.postimg.cc/cC7GNYdC/my.jpg" 
-                alt="Julian Ebinesar"
-                className="w-full h-full object-cover"
-              />
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="space-y-10 animate-fade-in">
+          {/* Profile Image positioned above the name */}
+          <div className="flex justify-center pt-16">
+            <div className="relative group perspective-1500">
+              <div className="w-48 h-48 bg-gradient-to-br from-green-400/20 to-green-600/30 rounded-full p-1.5 shadow-2xl shadow-green-400/30 hover:shadow-green-400/60 transition-all duration-500 hover-lift transform-3d">
+                <div className="w-full h-full rounded-full overflow-hidden hover-lift transition-transform duration-300"
+                     style={{ transformStyle: 'preserve-3d' }}>
+                  <img 
+                    src="https://i.postimg.cc/cC7GNYdC/my.jpg" 
+                    alt="Julian Ebinesar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 pulse-3d"></div>
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center shadow-lg animate-bounce hover-lift transform-3d"
+                   style={{ transform: 'translateZ(20px)', transformStyle: 'preserve-3d' }}>
+                <Sparkles className="w-4 h-4 text-gray-900" />
+              </div>
             </div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 pulse-3d"></div>
-          <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center shadow-lg animate-bounce hover-lift transform-3d"
-               style={{ transform: 'translateZ(20px)', transformStyle: 'preserve-3d' }}>
-            <Sparkles className="w-4 h-4 text-gray-900" />
-          </div>
-        </div>
-      </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-32">
-        <div className="space-y-10 animate-fade-in">
           {/* Enhanced Title with advanced 3D text effect */}
-          <div className="space-y-4 perspective-1200 pt-16">
+          <div className="space-y-4 perspective-1200">
             <h1 className="text-6xl md:text-8xl font-black leading-tight hover-lift transform-3d"
                 style={{ 
                   transform: 'rotateX(2deg)',
