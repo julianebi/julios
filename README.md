@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/ae06f1b6-e886-4bec-9b2e-9a2168a664af
+**URL**:(https://portfolio-analyst.netlify.app/)
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ae06f1b6-e886-4bec-9b2e-9a2168a664af) and start prompting.
+Simply visit the [Lovable Project](https://lovable.dev/projects/ae06f1b6-e886-4bec-9b2e-9a2168a664af)and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
